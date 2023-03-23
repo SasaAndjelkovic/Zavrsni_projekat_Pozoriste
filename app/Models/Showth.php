@@ -8,6 +8,6 @@ class Showth extends Model
 {
     public function avatars()
     {
-        return $this->belongsToMany (Avatar::class, 'avatar_showths');
+        return $this->belongsTo (Avatar::class, 'avatar_showths');
     }
 }
