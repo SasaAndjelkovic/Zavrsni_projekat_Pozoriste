@@ -5,6 +5,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ShowthStoreRequest extends FormRequest
 {
@@ -27,6 +28,13 @@ class ShowthStoreRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string', 'max:255'],
             'author' => ['required', 'string', 'max:255'],
+
+            //podaci o avatarima
+            
+            'avatar_ids' => ['required', 'array'],
+
+            'avatar_ids.*' => ['required', 'integer',
+                   Rule::exists('avatars', 'id')],
         ];
     }
 }
