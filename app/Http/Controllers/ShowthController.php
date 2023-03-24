@@ -46,13 +46,13 @@ class ShowthController extends Controller
         $showth = new Showth();
         $showthService = new ShowthService();
 
-        $ShowthService->storeShowth($request, $showth);
+        $showthService->storeShowth($request, $showth);
 
         return redirect()->route('showths.index');
     }
 
     // Menjamo podatke u bazi za vec postojeci model
-    public function update(ShowthStoreRequest $request, Showth $client)
+    public function update(ShowthStoreRequest $request, Showth $showth)
     {
         $showthService = new ShowthService();
         $showthService->storeShowth($request, $showth);
