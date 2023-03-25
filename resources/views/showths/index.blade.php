@@ -12,19 +12,19 @@
         >Create +</a>
     </div>
 
-    @if($clients->count() === 0)
-        <p>No clients found!</p>
+    @if($showths->count() === 0)
+        <p>No shows found!</p>
     @else
         <table class="table">
             <thead class="table-light">
-                <th>ID#</th>
+                <th>ID</th>
                 <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
+                <th>Description</th>
+                <th>Author</th>
                 <th></th>
             </thead>
             <tbody>
-                @foreach($clients as $client)
+                @foreach($showths as $showth)
                     @component('showths.components.table_row')
                         @slot('showths', $showths)
                     @endcomponent

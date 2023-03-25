@@ -14,7 +14,7 @@ class ShowthController extends Controller
      {
         $showths = Showth::paginate(10);
  
-        return view('showth.index')->with([
+        return view('showths.index')->with([
              'showths' => $showths
          ]);
     }
@@ -57,7 +57,7 @@ class ShowthController extends Controller
         $showthService = new ShowthService();
         $showthService->storeShowth($request, $showth);
 
-        return redirect()->route('clients.index');
+        return redirect()->route('showth.index');
     }
 
     public function destroy(Request $request, Showth $showth)
