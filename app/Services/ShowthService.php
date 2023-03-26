@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Http\Requests\ShowthStoreRequest;
+use App\Http\Requests\Web\ShowthStoreRequest;
 use App\Models\AvatarShowth;
 use App\Models\Showth;
 use Illuminate\Support\Facades\DB;

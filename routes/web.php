@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\Auth\ManagerAuthController;
-use App\Http\Controllers\Auth\UserAuthController;
-use App\Http\Controllers\ShowthController;
-use App\Http\Controllers\AvatarController;
+use App\Http\Controllers\Web\Auth\ManagerAuthController;
+use App\Http\Controllers\Web\Auth\UserAuthController;
+use App\Http\Controllers\Web\ShowthController;
+use App\Http\Controllers\Web\AvatarController;
 use Illuminate\Support\Facades\Route;
 
 //ovo je neka pocetna stranica

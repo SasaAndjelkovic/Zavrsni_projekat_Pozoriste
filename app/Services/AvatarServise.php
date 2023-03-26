@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Services;
-use App\Http\Requests\AvatarStoreRequest;
+use App\Http\Requests\Web\AvatarStoreRequest;
 use App\Models\Avatar;
 
 class AvatarService

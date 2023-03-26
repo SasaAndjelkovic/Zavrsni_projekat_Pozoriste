@@ -2,7 +2,7 @@
 
 
 //sta se ovo desava
-namespace App\Http\Requests;
+namespace App\Http\Requests\Web;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;

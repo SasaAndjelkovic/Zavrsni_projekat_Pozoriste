@@ -1,30 +1,30 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Web\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\LoginRequest;
+use App\Http\Requests\Web\LoginRequest;
 use App\Services\AuthenticationService;
 use Illuminate\Http\Request;
 
-class UserAuthController extends Controller
+class ManagerAuthController extends Controller
 {
     public function loginShow()
     {
-        return view('auth.login');
+        return view('auth.manager_login');
     }
 
     public function login(LoginRequest $request)
     {
         $service = new AuthenticationService();
         $success = $service->login(
-            'web',
-            $request->input('email'),
+            'manager',  //   guard:
+            $request->input('email'),  //key:
             $request->input('password')
         );
 
         return $success ?
-            redirect()->route('user.dashboard') :
+            redirect()->route('showths.index') :
             redirect()->back()->withErrors([
                 'email' => 'Credentials not found',
             ]);
@@ -33,8 +33,8 @@ class UserAuthController extends Controller
     public function logout()
     {
         $service = new AuthenticationService();
-        $service->logout('web');
+        $service->logout('manager');
 
-        return redirect()->route('user.login.show');
+        return redirect()->route('manager.login.show');
     }
 }
