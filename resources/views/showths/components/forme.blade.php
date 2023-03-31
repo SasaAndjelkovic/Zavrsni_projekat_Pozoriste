@@ -1,6 +1,6 @@
 @php
     /** @var \App\Models\Showth $showth */
-    /** @var \App\Models\Avatars $avatar */
+    /** @var \App\Models\Avatar $avatar */
 @endphp
 
 <div class="mb-3">

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ShowthStoreRequest;
+use App\Http\Requests\Web\ShowthStoreRequest;
 use App\Models\Avatar;
 use App\Models\Showth;
 use App\Services\ShowthService;

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\AvatarStoreRequest;
+use App\Http\Requests\Web\AvatarStoreRequest;
 use App\Models\Avatar;
 use App\Services\AvatarService;
 use Illuminate\Http\Request;
