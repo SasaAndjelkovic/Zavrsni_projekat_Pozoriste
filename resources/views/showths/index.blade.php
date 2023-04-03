@@ -26,7 +26,7 @@
             <tbody>
                 @foreach($showths as $showth)
                     @component('showths.components.table_row')
-                        @slot('showths', $showths)
+                        @slot('showth', $showth)
                     @endcomponent
                 @endforeach
             </tbody>

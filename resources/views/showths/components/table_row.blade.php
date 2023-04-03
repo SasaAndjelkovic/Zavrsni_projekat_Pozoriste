@@ -22,7 +22,7 @@
             class="btn btn-dark me-4 d-inline-block"
         >Edit</a>
 
-        <form method="POST" action="{{ route('showths.delete', ['showth' => $showth]) }}">
+        <form method="POST" action="{{ route('showths.destroy', ['showth' => $showth]) }}">
             @csrf
             @method('DELETE')
             <button
