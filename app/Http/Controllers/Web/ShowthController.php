@@ -13,10 +13,17 @@ class ShowthController extends Controller
 {
      public function index()
      {
-        $showths = Showth::paginate(10);
+        // $showths = Showth::paginate(10)
+        $showths = Showth::query()
+     
+        ->with(['avatars'])
+        ->paginate(10);
+
+        //dd($showths);
  
         return view('showths.index')->with([
              'showths' => $showths
+
          ]);
     }
 
@@ -36,8 +43,11 @@ class ShowthController extends Controller
     {
         $avatars = Avatar::all();
 
+        $selectedAvatarIds = $showth->avatars()->pluck('avatars.id')->all();
+
         return view('showths.edit')->with([
             'avatars' => $avatars,
+            'selectedAvatarIds' => $selectedAvatarIds,
             'showth' => $showth,
         ]);
     }
@@ -58,12 +68,12 @@ class ShowthController extends Controller
         $showthService = new ShowthService();
         $showthService->storeShowth($request, $showth);
 
-        return redirect()->route('showth.index');
+        return redirect()->route('showths.index');
     }
 
     public function destroy(Request $request, Showth $showth)
     {
         $showth->delete();
-        return redirect()->route('showth.index');
+        return redirect()->route('showths.index');
     }
 }
