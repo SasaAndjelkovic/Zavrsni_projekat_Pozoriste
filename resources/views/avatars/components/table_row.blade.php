@@ -16,7 +16,7 @@
             class="btn btn-dark me-4 d-inline-block"
         >Edit</a>
 
-        <form method="POST" action="{{ route('avatars.delete', ['avatar' => $avatar]) }}">
+        <form method="POST" action="{{ route('avatars.destroy', ['avatar' => $avatar]) }}">
             @csrf
             @method('DELETE')
             <button

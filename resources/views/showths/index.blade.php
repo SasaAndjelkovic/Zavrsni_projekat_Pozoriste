@@ -21,6 +21,7 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Author</th>
+                <th>Avatars</th>
                 <th></th>
             </thead>
             <tbody>

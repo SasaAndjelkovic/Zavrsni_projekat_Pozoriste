@@ -14,7 +14,7 @@ class AvatarController extends Controller
     {
         $avatars = Avatar::paginate(10);
 
-        return view('avatar.index')->with([
+        return view('avatars.index')->with([
             'avatars' => $avatars,
         ]);
     }
