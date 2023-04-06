@@ -17,8 +17,9 @@
     @else
         <table class="table">
             <thead class="table-light">
-                <th>ID#</th>
+                <th>ID</th>
                 <th>Name</th>
+                <th>Description</th>
                 <th></th>
             </thead>
             <tbody>

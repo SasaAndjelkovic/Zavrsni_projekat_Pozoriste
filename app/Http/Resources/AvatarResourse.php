@@ -11,6 +11,7 @@ class AvatarResource extends JsonResource
     {
         return [
             "name" => $this->name,
+            "description" => $this->description,
         ];
     }
 }

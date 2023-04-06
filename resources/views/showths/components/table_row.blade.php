@@ -15,6 +15,11 @@
     <td>
         {{ $showth->author }}
     </td>
+    <td>
+        @foreach($showth->avatars as $avatar)
+            {{ $avatar->name }}
+        @endforeach
+    </td>
     <td class="d-flex justify-content-end">
         <a
             href="{{ route('showths.edit', ['showth' => $showth]) }}"

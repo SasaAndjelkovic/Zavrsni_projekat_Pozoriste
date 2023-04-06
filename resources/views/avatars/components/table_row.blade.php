@@ -9,6 +9,9 @@
     <td>
         {{ $avatar->name }}
     </td>
+    <td>
+        {{ $avatar->description }}
+    </td>
     <td class="d-flex justify-content-end">
         <a
             href="{{ route('avatars.edit', ['avatar' => $avatar]) }}"

@@ -51,6 +51,6 @@ class AvatarController extends Controller
     {
         $avatar->delete();
 
-        return redirect()->route('avatar.index');
+        return redirect()->route('avatars.index');
     }
 }
