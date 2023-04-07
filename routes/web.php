@@ -61,6 +61,7 @@ Route::middleware(['auth:manager,web'])->group(function() {   //svi ulazaci
     Route::delete('/avatars/{avatar}/delete', [AvatarController::class, 'destroy'])->name('avatars.destroy');
 
     Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
+    Route::get('/shop/{article}', [ArticleController::class, 'show']) ->name('article');
 
     Route::get('/report', [ReportController::class, 'show'])->name('reports.show');
 });
