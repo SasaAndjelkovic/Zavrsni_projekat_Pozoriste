@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\ArticleController;
 use App\Http\Controllers\Web\Auth\ManagerAuthController;
 use App\Http\Controllers\Web\Auth\UserAuthController;
 use App\Http\Controllers\Web\ShowthController;
@@ -58,6 +59,8 @@ Route::middleware(['auth:manager,web'])->group(function() {   //svi ulazaci
     Route::post('/avatars/store', [AvatarController::class, 'store'])->name('avatars.store');
     Route::put('/avatars/{avatar}/update', [AvatarController::class, 'update'])->name('avatars.update');
     Route::delete('/avatars/{avatar}/delete', [AvatarController::class, 'destroy'])->name('avatars.destroy');
+
+    Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
 
     Route::get('/report', [ReportController::class, 'show'])->name('reports.show');
 });

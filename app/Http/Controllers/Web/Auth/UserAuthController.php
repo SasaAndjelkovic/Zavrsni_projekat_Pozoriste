@@ -24,7 +24,7 @@ class UserAuthController extends Controller
         );
 
         return $success ?
-            redirect()->route('user.dashboard') :
+            redirect()->route('articles.index') :
             redirect()->back()->withErrors([
                 'email' => 'Credentials not found',
             ]);
