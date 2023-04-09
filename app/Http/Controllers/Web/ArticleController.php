@@ -18,8 +18,9 @@ class ArticleController extends Controller
 
     public function show(Article $article) 
     {
-        return view('shop.show')->with([
-            'article' => $article
+       return view('articles.userreport')->with([
+             'article' => $article
         ]);
     }
+
 }

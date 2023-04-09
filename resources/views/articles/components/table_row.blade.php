@@ -10,19 +10,17 @@
         {{ $article->name }}
     </td>
     <td>
-        {{ $article->description }}
-    </td>
-    <td>
-        {{ $article->author }}
-    </td>
-    <td>
-        @foreach($article->avatars as $avatar)
-            {{ $avatar->name }}
-        @endforeach
+        <select>
+            @for ($i = 1; $i <= 10; $i++)
+                <option value="{{ $i }}">
+                    {{ $i }} 
+                </option>
+            @endfor
+        </select>
     </td>
     <td class="d-flex justify-content-end">
         <a
-            href="{{ route('shop', ['article' => $article]) }}"
+            href="{{ route('articles.userreport', ['article' => $article]) }}"
             type="button"
             class="btn btn-danger me-4 d-inline-block"
         >Buy</a>

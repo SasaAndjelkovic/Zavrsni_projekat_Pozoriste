@@ -12,9 +12,7 @@
             <thead class="table-light">
                 <th>ID</th>
                 <th>Name</th>
-                <th>Description</th>
-                <th>Author</th>
-                <th>Avatars</th>
+                <th>Quantity</th>
                 <th></th>
             </thead>
             <tbody>
@@ -23,6 +21,7 @@
                         @slot('article', $article)
                     @endcomponent
                 @endforeach
+              
             </tbody>
         </table>
     @endif
