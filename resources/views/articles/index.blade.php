@@ -24,5 +24,11 @@
               
             </tbody>
         </table>
+            <div class="d-flex justify-content-end">
+            <a
+            href="{{ route('articles.soon') }}"
+            class="btn btn-info mb-3"
+            >Coming soon</a>
+        </div>
     @endif
 @endsection

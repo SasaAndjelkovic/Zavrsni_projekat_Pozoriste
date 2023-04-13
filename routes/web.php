@@ -62,6 +62,7 @@ Route::middleware(['auth:manager,web'])->group(function() {   //svi ulazaci
 
     Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
     Route::get('/articles/userreport', [ArticleController::class, 'show']) ->name('articles.userreport');
+    Route::get('/articles/soon', [ArticleController::class, 'coming']) ->name('articles.soon');
 
     Route::get('/report', [ReportController::class, 'show'])->name('reports.show');
 });
