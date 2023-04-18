@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Api\AdminAuthApiController;
+use App\Http\Controllers\Api\ManagerAuthApiController;
+use App\Http\Controllers\Api\ShowthApiController;
 //use App\Http\Controllers\Api\ClientApiController;
 use Illuminate\Support\Facades\Route;
 
@@ -8,21 +9,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::name('api.')->group(function() {
 
-    // localhost:8000/api/admin/login
-    Route::middleware('guest:admin')->group(function() {
-        Route::post('/admin/login', [AdminAuthApiController::class, 'login'])
-            ->name('admin.login'); // api.admin.login
+    // localhost:8000/api/manager/login
+    Route::middleware('guest:manager')->group(function() {
+        Route::post('/manager/login', [ManagerAuthApiController::class, 'login'])
+            ->name('manager.login'); // api.manager.login
     });
 
-    Route::middleware('auth:admin')->group(function() {
-        // interaguje sa klijentima
-        Route::get('/showths', [ClientApiController::class, 'index'])
+    Route::middleware('guest:manager')->group(function() {
+        // interaguje sa predstavama
+        Route::get('/showths', [ShowthApiController::class, 'index'])
             ->name('showths.index');
 
-        Route::post('/showths', [ClientApiController::class, 'store'])
+        Route::post('/showths', [ShowthApiController::class, 'store'])
             ->name('showths.store');
 
-        Route::delete('/showths/{client}', [ClientApiController::class, 'delete'])
+        Route::delete('/showths/{showth}', [ShowthApiController::class, 'delete'])
             ->name('showths.delete');
     });
 });
